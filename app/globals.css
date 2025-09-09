@@ -1,0 +1,147 @@
+@config "../tailwind.config.ts";
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+
+@import "tailwindcss";
+@import "aos/dist/aos.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --color-primary-500: #4b0082;
+  --color-secondary-500: #33005777;
+
+  --color-dark-1: #ffffff;
+  --color-dark-2: #e5e7eb;
+  --color-dark-3: #d1d5db;
+  --color-dark-4: #9ca3af;
+
+  --color-light-1: #0a0a0a;
+  --color-light-2: #1a1a1a;
+  --color-light-3: #2e2e2e;
+  --color-light-4: #3f3f3f;
+
+  --color-gray-1: #9aa4b0;
+  --color-skeleton: #9aa4b089;
+  --color-glassmorphism: rgba(255, 255, 255, 0.05);
+
+  --shadow-count-badge: 0px 0px 6px 2px rgba(255, 255, 255, 0.15);
+  --shadow-groups-sidebar: -30px 0px 60px 0px rgba(0, 0, 0, 0.6);
+  --shadow-box: -30px 0px 60px 0px #090b1099;
+}
+
+.dark {
+  --color-primary-500: #4b0082;
+  --color-secondary-500: #4c008290;
+
+  --color-dark-1: #000000;
+  --color-dark-2: #090b10; /*cards bg*/
+  --color-dark-3: #101012;
+  --color-dark-4: #1f1f22;
+
+  --color-light-1: #ffffff;
+  --color-light-2: #efefef;
+  --color-light-3: #7878a3;
+  --color-light-4: #5c5c7b;
+
+  --color-gray-1: #697c89;
+  --color-skeleton: #9aa4b047;
+
+  --shadow-count-badge: 0px 0px 6px 2px rgba(219, 188, 159, 0.3);
+  --shadow-groups-sidebar: -30px 0px 60px 0px rgba(28, 28, 31, 0.5);
+  --shadow-box: 0px 3px 10px 1px #4c008290;
+}
+
+@theme {
+  --color-primary-500: var(--color-primary-500);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-blue: var(--color-blue);
+  --color-logout-btn: var(--color-logout-btn);
+  --color-navbar-menu: var(--color-navbar-menu);
+
+  --color-dark-1: var(--color-dark-1);
+  --color-dark-2: var(--color-dark-2);
+  --color-dark-3: var(--color-dark-3);
+  --color-dark-4: var(--color-dark-4);
+
+  --color-light-1: var(--color-light-1);
+  --color-light-2: var(--color-light-2);
+  --color-light-3: var(--color-light-3);
+  --color-light-4: var(--color-light-4);
+
+  --color-gray-1: var(--color-gray-1);
+  --color-skeleton: var(--color-skeleton);
+  --color-glassmorphism: var(--color-glassmorphism);
+
+  --shadow-count-badge: var(--shadow-count-badge);
+  --shadow-groups-sidebar: var(--shadow-groups-sidebar);
+  --shadow-box: var(--shadow-box);
+
+  --animate-accordion-down: var(--animate-accordion-down);
+  --animate-accordion-up: var(--animate-accordion-up);
+
+  --container-center: true;
+  --container-padding: 2rem;
+  --container-screens: (2xl: 1400px);
+}
+
+@layer base {
+  * {
+    transition: color ease 0.3s, background ease 0.2s, box-shadow ease 0.2s;
+  }
+
+  button {
+    @apply cursor-pointer hover:opacity-90;
+  }
+}
+
+@layer utilities {
+  .animate-open_close {
+    @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] transition duration-500 h-6 w-6 sm:w-7 sm:h-7;
+  }
+
+  .animate-open_close[data-state="open"] {
+    @apply scale-100 opacity-100 rotate-0;
+  }
+
+  .animate-open_close[data-state="close"] {
+    @apply scale-0 opacity-0 rotate-90;
+  }
+}
+
+@layer components {
+  /*! General Components */
+  /* btn */
+  .btn {
+    @apply capitalize w-fit !text-tiny-medium transition duration-200 sm:!text-base-medium;
+  }
+
+  /* title */
+  .title {
+    @apply mb-10 font-heading text-heading3-bold xs:text-heading1-bold text-center text-light-1 tracking-wide;
+  }
+
+  .sub-title {
+    @apply font-heading text-body-medium xs:text-heading4-medium xs:w-min text-center text-light-2;
+  }
+
+  .des {
+    @apply text-small-regular xs:text-base-regular text-center text-light-2;
+  }
+
+  /*! Header */
+  /* Container */
+  .purple-container {
+    @apply flex flex-col items-center pt-20 sm:pt-30 pb-20 bg-radial-[at_0%_0%] dark:bg-radial-[at_50%_40%] from-secondary-500 via-15% to-transparent to-75%;
+  }
+
+  /* Head Text */
+  .head-text {
+    @apply mt-10 font-heading text-heading2-bold xs:text-heading1-bold sm:text-heading-bold max-w-lg max-xs:max-w-xs leading-[110%] text-center text-light-1 tracking-wide;
+  }
+
+  /* Sub Text */
+  .sub-text {
+    @apply text-tiny-medium xs:text-base-medium mt-4 text-light-2 text-center max-w-[250px] xs:max-w-md;
+  }
+}
