@@ -8,7 +8,7 @@ export default function Services() {
       <h1 className="title">Our Services</h1>
 
       {/*//! Services Cards */}
-      <div className="flex max-md:flex-wrap justify-center items-center max-xs:flex-col gap-5">
+      <div className="overflow-hidden flex max-md:flex-wrap justify-center items-center max-xs:flex-col gap-5">
         {services.map(({ Icon, title, description }, index) => (
           <div
             key={index}
