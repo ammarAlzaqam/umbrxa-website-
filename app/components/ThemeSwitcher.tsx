@@ -1,5 +1,5 @@
-import { useTheme } from "../layout";
-import { Moon, Sun, SunDim } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider";
+import { Moon, Sun } from "lucide-react";
 
 export default function ThemeSwitcher() {
   const { darkMode, setDarkMode } = useTheme();
