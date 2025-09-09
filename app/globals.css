@@ -27,7 +27,6 @@
 
   --shadow-count-badge: 0px 0px 6px 2px rgba(255, 255, 255, 0.15);
   --shadow-groups-sidebar: -30px 0px 60px 0px rgba(0, 0, 0, 0.6);
-  --shadow-box: -30px 0px 60px 0px #090b1099;
 }
 
 .dark {
@@ -49,7 +48,6 @@
 
   --shadow-count-badge: 0px 0px 6px 2px rgba(219, 188, 159, 0.3);
   --shadow-groups-sidebar: -30px 0px 60px 0px rgba(28, 28, 31, 0.5);
-  --shadow-box: 0px 3px 10px 1px #4c008290;
 }
 
 @theme {
@@ -106,6 +104,10 @@
 
   .animate-open_close[data-state="close"] {
     @apply scale-0 opacity-0 rotate-90;
+  }
+
+  .shadow-box {
+    @apply shadow-groups-sidebar dark:shadow-md dark:shadow-secondary-500;
   }
 }
 
