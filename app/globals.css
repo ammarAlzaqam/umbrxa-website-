@@ -107,7 +107,7 @@
   }
 
   .shadow-box {
-    @apply shadow-groups-sidebar dark:shadow-md dark:shadow-secondary-500;
+    @apply shadow-md shadow-gray-1 dark:shadow-secondary-500;
   }
 }
 

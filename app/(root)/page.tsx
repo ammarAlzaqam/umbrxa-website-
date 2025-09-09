@@ -7,7 +7,7 @@ export default function Home() {
       <Header />
 
       {/*//! Our Services */}
-      <div className="pt-5 px-10">
+      <div className="overflow-hidden p-5 sm:px-10">
         <Services />
       </div>
 
