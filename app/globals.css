@@ -4,11 +4,12 @@
 
 @import "tailwindcss";
 @import "aos/dist/aos.css";
+@import "animate.css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --color-primary-500: rgb(122, 93, 53);
+  --color-primary-500: #bc9355;
   --color-secondary-500: #d3a560bb;
 
   --color-dark-1: #ffffff;
@@ -131,7 +132,7 @@
   /*! General Components */
   /* button */
   .btn {
-    @apply capitalize w-fit !text-tiny-medium sm:!text-base-medium text-dark-2 bg-primary-500 shadow-md shadow-primary-500/80;
+    @apply capitalize w-fit !text-subtle-medium sm:!text-base-medium text-black bg-primary-500 shadow-md shadow-primary-500/80;
   }
 
   /* title */
@@ -174,4 +175,31 @@
   .sub-text {
     @apply text-tiny-medium xs:text-base-medium mt-4 text-light-2 max-w-[250px] xs:max-w-md;
   }
+}
+
+.card-after_dark::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    #000000bf 0%,
+    #00000092 50%,
+    transparent 70%
+  );
+}
+
+[data-aos="fade-down"] {
+  transform: translate3d(0, -30px, 0); /* 👈 المسافة */
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-down"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
 }

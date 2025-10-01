@@ -1,5 +1,6 @@
 import About from "../components/About";
 import Header from "../components/Header";
+import Portfolio from "../components/Portfolio";
 import Services from "../components/Services";
 
 export default function Home() {
@@ -29,6 +30,12 @@ export default function Home() {
       {/*// Divider */}
       <div className="divider" />
 
+      <div id="portfolio" className="container">
+        <Portfolio />
+      </div>
+
+      {/*// Divider */}
+      <div className="divider" />
     </main>
   );
 }
