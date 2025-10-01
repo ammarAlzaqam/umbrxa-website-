@@ -1,5 +1,5 @@
 "use client";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Montserrat, Playfair_Display } from "next/font/google";
 import React from "react";
 import "./globals.css";
 import ThemeSwitcher from "./components/ThemeSwitcher";
@@ -16,6 +16,11 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
 export interface ChildrenProps {
   readonly children: React.ReactNode;
 }
@@ -24,7 +29,7 @@ export default function RootLayout({ children }: ChildrenProps) {
   return (
     <html lang="en" className={`bg-dark-1 text-light-1`}>
       <body
-        className={`${inter.variable} ${montserrat.variable} font-body antialiased`}
+        className={`${playfair.variable} ${inter.variable} ${montserrat.variable} font-body antialiased`}
       >
         <ThemeProvider>
           <AOSProvider>{children}</AOSProvider>

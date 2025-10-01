@@ -11,7 +11,7 @@ export default function ThemeSwitcher() {
           return !prev;
         });
       }}
-      className="fixed top-4 right-4 w-10 h-10 rotate-45 backdrop-blur-md transition rounded-full border-b-2 duration-500 border-primary-500 dark:border-yellow-500"
+      className="fixed top-4 right-4 w-10 h-10 rotate-45 backdrop-blur-sm transition rounded-full border-b-2 duration-500 border-primary-500 dark:border-yellow-500"
     >
       <div className="-rotate-45">
         <Sun

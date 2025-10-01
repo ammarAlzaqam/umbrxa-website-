@@ -173,11 +173,12 @@ module.exports = {
     },
     extend: {
       screens: {
-        xs: "400px",
+        xs: "450px",
       },
       fontFamily: {
-        heading: ["var(--font-inter)", "sans-serif"], // للعناوين
-        body: ["var(--font-montserrat)", "sans-serif"], // للباقي
+        heading: ["var(--font-playfair)", "sans-serif"],
+        body: ["var(--font-montserrat)", "sans-serif"],
+        action: ["sans-serif-bold"]
       },
       keyframes: {
         "accordion-down": {

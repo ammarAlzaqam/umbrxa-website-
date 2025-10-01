@@ -1,20 +1,34 @@
+import About from "../components/About";
 import Header from "../components/Header";
 import Services from "../components/Services";
 
 export default function Home() {
   return (
     <main>
-      <Header />
+      {/*//! Header */}
+      <div className="container bg-gold_radial">
+        <Header />
+      </div>
 
-      {/*//! Our Services */}
-      <div className="overflow-hidden p-5 sm:px-10">
+      {/*// Divider */}
+      <div className="divider" />
+
+      {/*//! About */}
+      <div className="container">
+        <About />
+      </div>
+
+      {/*// Divider */}
+      <div className="divider" />
+
+      {/*//! Services */}
+      <div className="overflow-hidden container">
         <Services />
       </div>
 
-      {/*//! Our  */}
-      <div className="pt-15">
-        {/* <Portfolio /> */}
-      </div>
+      {/*// Divider */}
+      <div className="divider" />
+
     </main>
   );
 }

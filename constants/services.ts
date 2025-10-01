@@ -4,6 +4,10 @@ import {
   Gem as BrandStrategyIcon,
   MonitorSmartphone as UiUxDesignIcon,
   type LucideIcon,
+  ChartNoAxesCombined,
+  Signature,
+  Fingerprint,
+  HeartHandshake,
 } from "lucide-react";
 
 interface Service {
@@ -14,24 +18,18 @@ interface Service {
 
 export const services: Service[] = [
   {
-    Icon: WebsiteDesign,
-    title: "Website Design",
-    description: "Create modern, responsive websites that attract visitors.",
-  },
-  {
-    Icon: BusinessStrategyIcon,
-    title: "Business Strategy",
-    description: "Develop smart strategies to grow your online presence.",
-  },
-  {
-    Icon: BrandStrategyIcon,
+    Icon: ChartNoAxesCombined,
     title: "Brand Strategy",
-    description: "Build a unique identity that strengthens your brand.",
+    description: "Research, audience, competitors → unique positioning",
   },
   {
-    Icon: UiUxDesignIcon,
-    title: "UI/UX Design",
-    description:
-      "Design clean, user-friendly interfaces for better experience.",
+    Icon: Fingerprint,
+    title: "Visual Identity",
+    description: "Logos → full systems, lasting impression",
+  },
+  {
+    Icon: HeartHandshake,
+    title: "Customer Experience",
+    description: "Journey mapping → clarity, consistency, emotion",
   },
 ];

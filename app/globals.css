@@ -8,8 +8,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --color-primary-500: #4b0082;
-  --color-secondary-500: #33005777;
+  --color-primary-500: rgb(122, 93, 53);
+  --color-secondary-500: #d3a560bb;
 
   --color-dark-1: #ffffff;
   --color-dark-2: #e5e7eb;
@@ -30,8 +30,8 @@
 }
 
 .dark {
-  --color-primary-500: #4b0082;
-  --color-secondary-500: #4c008290;
+  --color-primary-500: #cfa15e;
+  --color-secondary-500: #cfa25e41;
 
   --color-dark-1: #000000;
   --color-dark-2: #090b10; /*cards bg*/
@@ -85,12 +85,28 @@
 
 @layer base {
   * {
-    transition: color ease 0.3s, background ease 0.2s, box-shadow ease 0.2s;
+    transition: all ease 0.3s;
+    scroll-behavior: smooth;
   }
 
   button {
-    @apply cursor-pointer hover:opacity-90;
+    @apply cursor-pointer !transition-all duration-300 hover:opacity-90 font-action;
   }
+
+  h1,
+  h2 {
+    @apply font-heading;
+  }
+
+  h3,
+  p,
+  span {
+    @apply font-body;
+  }
+}
+
+@utility bg-gold_radial {
+  @apply bg-radial-[at_0%_0%] dark:bg-radial-[at_50%_40%] from-secondary-500 via-15% to-transparent to-75%;
 }
 
 @layer utilities {
@@ -113,37 +129,49 @@
 
 @layer components {
   /*! General Components */
-  /* btn */
+  /* button */
   .btn {
-    @apply capitalize w-fit !text-tiny-medium transition duration-200 sm:!text-base-medium;
+    @apply capitalize w-fit !text-tiny-medium sm:!text-base-medium text-dark-2 bg-primary-500 shadow-md shadow-primary-500/80;
   }
 
   /* title */
   .title {
-    @apply mb-10 font-heading text-heading3-bold xs:text-heading1-bold text-center text-light-1 tracking-wide;
+    @apply text-primary-500 mb-10 font-heading text-heading3-bold xs:text-heading1-bold tracking-wide;
   }
 
+  /* subTitle */
   .sub-title {
-    @apply font-heading text-body-medium xs:text-heading4-medium xs:w-min text-center text-light-2;
+    @apply font-heading text-body-medium xs:text-heading4-medium text-light-2;
   }
 
+  /* description */
   .des {
-    @apply text-small-regular xs:text-base-regular text-center text-light-2;
+    @apply text-small-regular text-light-2 max-w-xs;
+  }
+
+  /* link */
+  .link {
+    @apply text-base-medium xs:text-body-medium;
+  }
+
+  /* divider */
+  .divider {
+    @apply w-full h-0.5 bg-dark-3 mt-7 mb-10;
   }
 
   /*! Header */
   /* Container */
-  .purple-container {
-    @apply flex flex-col items-center pt-20 sm:pt-30 pb-20 bg-radial-[at_0%_0%] dark:bg-radial-[at_50%_40%] from-secondary-500 via-15% to-transparent to-75%;
+  .head-container {
+    @apply flex flex-col items-start pt-20 sm:pt-30;
   }
 
   /* Head Text */
   .head-text {
-    @apply mt-10 font-heading text-heading2-bold xs:text-heading1-bold sm:text-heading-bold max-w-lg max-xs:max-w-xs leading-[110%] text-center text-light-1 tracking-wide;
+    @apply mt-10 font-heading text-heading3-bold xs:text-heading1-bold sm:text-heading-bold max-w-xs xs:max-w-2xl leading-[110%] text-light-1 tracking-wide;
   }
 
   /* Sub Text */
   .sub-text {
-    @apply text-tiny-medium xs:text-base-medium mt-4 text-light-2 text-center max-w-[250px] xs:max-w-md;
+    @apply text-tiny-medium xs:text-base-medium mt-4 text-light-2 max-w-[250px] xs:max-w-md;
   }
 }
