@@ -1,4 +1,4 @@
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "@/components/providers/ThemeProvider";
 import { Moon, Sun } from "lucide-react";
 
 export default function ThemeSwitcher() {

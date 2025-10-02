@@ -11,6 +11,7 @@
 :root {
   --color-primary-500: #bc9355;
   --color-secondary-500: #d3a560bb;
+  --color-error: #e53935;
 
   --color-dark-1: #ffffff;
   --color-dark-2: #e5e7eb;
@@ -33,6 +34,7 @@
 .dark {
   --color-primary-500: #cfa15e;
   --color-secondary-500: #cfa25e41;
+  --color-error: #ef5350;
 
   --color-dark-1: #000000;
   --color-dark-2: #090b10; /*cards bg*/
@@ -55,7 +57,7 @@
   --color-primary-500: var(--color-primary-500);
   --color-secondary-500: var(--color-secondary-500);
   --color-blue: var(--color-blue);
-  --color-logout-btn: var(--color-logout-btn);
+  --color-error: var(--color-error);
   --color-navbar-menu: var(--color-navbar-menu);
 
   --color-dark-1: var(--color-dark-1);
@@ -174,6 +176,23 @@
   /* Sub Text */
   .sub-text {
     @apply text-tiny-medium xs:text-base-medium mt-4 text-light-2 max-w-[250px] xs:max-w-md;
+  }
+
+  /*//! Form */
+  .form {
+    @apply max-w-xl flex flex-col gap-5;
+  }
+
+  .form-label {
+    @apply text-light-2 text-small-medium;
+  }
+
+  .form-input {
+    @apply border border-primary-500 focus:!bg-dark-2 focus-visible:ring-primary-500;
+  }
+
+  .form-msg {
+    @apply text-error;
   }
 }
 
