@@ -16,8 +16,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
       setDarkMode(currentTheme === "dark");
     } else {
       // default dark
-      localStorage.setItem("theme", "dark");
-      setDarkMode(true);
+      localStorage.setItem("theme", "light");
     }
   }, []);
 
